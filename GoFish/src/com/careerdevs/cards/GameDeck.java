@@ -26,8 +26,10 @@ public class GameDeck implements Deck {
 	}
 
 	@Override
-	public Card draw() {
-		return cards.remove(cards.size() - 1);
+	public Card draw(boolean facing) {
+	     Card card = cards.remove(cards.size() - 1);
+	        if (facing) card.flip();
+	        return card;
 	}
 
 	@Override

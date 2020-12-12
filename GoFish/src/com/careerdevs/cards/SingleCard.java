@@ -9,7 +9,7 @@ public class SingleCard implements Deck {
 		return;
 	}
 	
-	public Card draw() {
+	public Card draw(boolean facing) {
 		Input input=new Input();
 		int cardValue= input.inputNumberText("card value: ");
 		String cardSuit=input.inputStringText("card suit: ");

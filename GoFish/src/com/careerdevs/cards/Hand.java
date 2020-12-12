@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import com.careerdevs.actors.Actor;
+import com.careerdevs.ui.Console;
 
 public class Hand {
 
@@ -27,6 +28,15 @@ public class Hand {
 		return actor;
 	}
 
+    @Override
+    public String toString() {
+        String output = "";
+        for (var card : cards) {
+            output += card.isFaceDown() ? "<*> " : card + " ";
+        }
+        return output.trim();
+    }
+    
 	public void getCard(Card card) {
 		cards.add(card);
 	}
@@ -48,9 +58,10 @@ public class Hand {
 		}
 		System.out.println(sortHand.toString());
 	}
-
-
-	public void showHand() {
-		Collections.sort();
-	}
+	
+	   public void revealHand() {
+	        for (var card : cards) {
+	            if (card.isFaceDown()) card.flip();
+	        }
+	   }
 }

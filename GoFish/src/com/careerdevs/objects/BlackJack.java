@@ -12,8 +12,8 @@ public class BlackJack {
 		
 		table.getDeck().shuffle();
 
-		table.getDealers().getCard(table.getDeck().draw());
-		table.getDealers().getCard(table.getDeck().draw());
+		table.getDealers().getCard(table.getDeck().draw(true));
+		table.getDealers().getCard(table.getDeck().draw(true));
 	
 		displayTable();
 		
@@ -27,7 +27,7 @@ public class BlackJack {
 
 	private void displayTable() {
 		System.out.print(table.getDealers().getName() + " -> ");
-		table.getDealers().showHand();
+		table.getDealers().toString();
 	//	System.out.println(" Hand total: " + table.getDealers().addUpCards());
 	}
 	
