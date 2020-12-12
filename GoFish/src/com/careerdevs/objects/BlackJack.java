@@ -18,7 +18,7 @@ public class BlackJack {
 		displayTable();
 		
 		Actor dealer=table.getDealers().getActor();
-		int choice=dealer.getAction(table.getDealers().addUpCards());
+	//	int choice=dealer.getAction(table.getDealers().addUpCards());
 		
 		
 
@@ -28,7 +28,7 @@ public class BlackJack {
 	private void displayTable() {
 		System.out.print(table.getDealers().getName() + " -> ");
 		table.getDealers().showHand();
-		System.out.println(" Hand total: " + table.getDealers().addUpCards());
+	//	System.out.println(" Hand total: " + table.getDealers().addUpCards());
 	}
 	
 	

@@ -1,14 +1,16 @@
 package com.careerdevs.cards;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 
 import com.careerdevs.actors.Actor;
-import com.careerdevs.ui.Console;
 
 public class Hand {
 
-	private List<Card> cards = new ArrayList<>(); 
+	private List<Card> cards = new ArrayList<>();
+	private HashMap<Integer, Integer> sortHand = new HashMap<>();
 	private Actor actor;
 	public int bet;
 
@@ -33,37 +35,22 @@ public class Hand {
 		return actor.setBet();
 	}
 
-
 	public int getCount() {
 		return cards.size();
 	}
 
-	public int addUpCards() {
-		int total = 0;
-		boolean aceHigh = true;
+	public void groupCards() {
 		for (Card card : cards) {
-
-			
-			if (card.getValue() == 1 && total+11 > 22) {
-			//	System.out.println("\n\nfoundAH:-" + aceHigh);
-				total -= 10;
-				aceHigh = false;
-			}
-			if (card.getValue() == 1 && aceHigh && total <= 21) {
-			//	System.out.println("\n\nfoundAH:+" + aceHigh);
-				total += 10;
-				aceHigh = true;
-			}
-			if (card.getValue() > 10) {
-				total += 10;
-			} else {
-				total += card.getValue();
-			}
+			if (sortHand.containsKey(card.getValue()))
+				sortHand.put(card.getValue(), sortHand.get(card.getValue()) + 1);
+			else
+				sortHand.put(card.getValue(), 1);
 		}
-		return total;
+		System.out.println(sortHand.toString());
 	}
 
+
 	public void showHand() {
-		Console.displayHand(cards);
+		Collections.sort();
 	}
 }

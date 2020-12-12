@@ -74,24 +74,24 @@ public class BlackJackGame {
 		}
 	}
 
-	public boolean choice(Hand hand, int action) {
-		switch (action) {
-		case 1:
-			Card card = table.getDeck().draw();
-			Console.hit(hand, card);
-			hand.getCard(card);
-			if (hand.addUpCards() > 21) {
-				Console.bust(hand.getName(), hand.addUpCards());
-				return true;
-			}
-			return false;
-		case 2:
-			Console.stand(hand.getName(), hand.addUpCards());
-			return true;
-		default:
-			ErrorConsole.errorChoice();
-			return true;
-		}
+//	public boolean choice(Hand hand, int action) {
+//		switch (action) {
+//		case 1:
+//			Card card = table.getDeck().draw();
+//			Console.hit(hand, card);
+//			hand.getCard(card);
+//			if (hand.addUpCards() > 21) {
+//				Console.bust(hand.getName(), hand.addUpCards());
+//				return true;
+//			}
+//			return false;
+//		case 2:
+//			Console.stand(hand.getName(), hand.addUpCards());
+//			return true;
+//		default:
+//			ErrorConsole.errorChoice();
+//			return true;
+//		}
 
-	}
+//	}
 }

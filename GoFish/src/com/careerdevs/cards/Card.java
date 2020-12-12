@@ -7,11 +7,12 @@ import com.careerdevs.ui.Console;
 public class Card {
 	private int value;
 	private String suit;
+	private boolean faceDown = true;
 
 	public Card(int value, String suit) {
 		this.value = value;
 		this.suit = suit;
-		
+
 	}
 
 	public String toString() {
@@ -39,4 +40,11 @@ public class Card {
 		return this.value;
 	}
 
+	public void flip() {
+		faceDown = !faceDown;
+	}
+
+	public boolean isFaceDown() {
+		return faceDown;
+	}
 }
