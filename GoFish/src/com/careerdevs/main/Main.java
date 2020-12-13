@@ -9,16 +9,16 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		//Game game = new Game();
-		//game.playGame();
+		Game game = new Game();
+		game.playGame();
 		// BlackJack testGame=new BlackJack();
 		// testGame.play();
 
 		// test face down - false / face up - true
-		Deck deck = new GameDeck();
-		Hand hand = new Hand(null);
-		hand.getCard(deck.draw(true));
-		System.out.println(hand.toString());
+//		Deck deck = new GameDeck();
+//		Hand hand = new Hand(null);
+//		hand.getCard(deck.draw(true));
+//		System.out.println(hand.toString());
 
 	}
 

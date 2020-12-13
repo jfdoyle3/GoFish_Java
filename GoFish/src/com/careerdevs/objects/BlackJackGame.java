@@ -67,9 +67,9 @@ public class BlackJackGame {
 	public void dealCards() {
 		for (int idx = 0; idx < 4; idx++) {
 			if (idx % 2 == 0) {
-				table.getPlayers().getCard(table.getDeck().draw(true));
+				table.getPlayer1().getCard(table.getDeck().draw(true));
 			} else {
-				table.getDealers().getCard(table.getDeck().draw(true));
+			//	table.getDealers().getCard(table.getDeck().draw(true));
 			}
 		}
 	}

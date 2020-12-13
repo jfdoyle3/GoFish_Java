@@ -16,8 +16,8 @@ public class Game {
 	public void playGame() {
 		table.getDeck().shuffle();
 		dealCards();
-		table.getPlayers().toString();
-		table.getPlayers().groupCards();
+		
+		//table.getPlayer1().groupCards();
 		
 
 		System.out.println("\nend of Line");
@@ -27,7 +27,7 @@ public class Game {
 
 	public void dealCards() {
 		for (int idx = 0; idx < 7; idx++) {
-			table.getPlayers().getCard(table.getDeck().draw(true));
+			table.getPlayer1().getCard(table.getDeck().draw(true));
 		}
 	}
 
@@ -72,10 +72,10 @@ public class Game {
 		}
 	}
 
-	private void showTable(Hand dealerHand, Hand playerHand) {
+	private void showTable( Hand playerHand) {
 		Console.horzLine();
-		System.out.print(dealerHand.getName() + " -> ");
-		dealerHand.toString();
+//		System.out.print(dealerHand.getName() + " -> ");
+//		dealerHand.toString();
 	//	System.out.println(" Hand total: " + dealerHand.addUpCards());
 		Console.horzLine();
 		System.out.print(playerHand.getName() + " -> ");

@@ -41,12 +41,6 @@ public class Console {
 		System.out.printf("%s placed a bet of $%,d  \n", hand.getName(),betAmount);
 	}
 
-	public static void displayHand(List<Card> hand) {
-		for (Card card : hand) {
-			System.out.print(card.toString() + " ");
-		}
-	}
-
 	public static void stand(String name, int stands) {
 		System.out.printf("\n%s stands at %d\n",name, stands);
 
