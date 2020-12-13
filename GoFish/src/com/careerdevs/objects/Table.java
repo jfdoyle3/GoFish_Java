@@ -7,15 +7,13 @@ import com.careerdevs.cards.GameDeck;
 import com.careerdevs.cards.Hand;
 
 public class Table {
+	
 	private Hand player1 = new Hand(new Player());
 //	private Hand player2 = new Hand(new Player());
 //	private Hand player3 = new Hand(new Player());
 	// private Hand dealers = new Hand(new Dealer());
 	private Deck deck = new GameDeck();
 
-	public void table() {
-
-	}
 
 	public Deck getDeck() {
 		return deck;

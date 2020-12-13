@@ -41,9 +41,7 @@ public class Hand {
 		cards.add(card);
 	}
 
-	public int getBet() {
-		return actor.setBet();
-	}
+
 
 	public int getCount() {
 		return cards.size();
@@ -60,8 +58,11 @@ public class Hand {
 	}
 	
 	   public void revealHand() {
-	        for (var card : cards) {
-	            if (card.isFaceDown()) card.flip();
+	        for (Card card : cards) {
+	            if (card.isFaceDown()) card.flip(); 
+	            
+	            System.out.print(card.toString()+ " ");
 	        }
+	       
 	   }
 }

@@ -1,11 +1,10 @@
 package com.careerdevs.game;
 
-import com.careerdevs.actors.Actor;
-import com.careerdevs.cards.Card;
+import com.careerdevs.cards.Deck;
+import com.careerdevs.cards.GameDeck;
 import com.careerdevs.cards.Hand;
 import com.careerdevs.objects.Table;
 import com.careerdevs.ui.Console;
-import com.careerdevs.ui.ErrorConsole;
 
 public class Game {
 
@@ -14,8 +13,11 @@ public class Game {
 	private boolean turn = true;
 
 	public void playGame() {
+		
 		table.getDeck().shuffle();
 		dealCards();
+		table.getPlayer1().revealHand();
+	
 		
 		//table.getPlayer1().groupCards();
 		
