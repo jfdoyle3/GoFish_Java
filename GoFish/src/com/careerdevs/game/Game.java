@@ -1,35 +1,50 @@
 package com.careerdevs.game;
 
-import com.careerdevs.cards.Deck;
-import com.careerdevs.cards.GameDeck;
-import com.careerdevs.cards.Hand;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.careerdevs.cards.Card;
 import com.careerdevs.objects.Table;
 import com.careerdevs.ui.Console;
+import com.careerdevs.ui.Input;
+
 
 public class Game {
 
 	private Table table = new Table();
-	
-	private boolean turn = true;
+	private Input input= new Input();
+	private List<Card> discard=new ArrayList<>();
 
 	public void playGame() {
 		
 		table.getDeck().shuffle();
 		dealCards();
-		table.getPlayer1().revealHand();
-	
 		
-		//table.getPlayer1().groupCards();
+		System.out.println(table.getPlayer1().toString());
+		int pickCard=input.inputNumberText("Pick a card flip from 0-6? ");
+		table.getPlayer1().flipCard(pickCard);
+		System.out.println(table.getPlayer1().toString());
 		
-
+		
+		//Card passedCard=new Card(1,"1");
+		
+		//table.getPlayer1().addCard(passedCard);
+		
+	//	System.out.println(table.getPlayer1().toString());
+		
+		
+		
+		
+		
 		System.out.println("\nend of Line");
 	}
 
+	public 
 
 
 	public void dealCards() {
 		for (int idx = 0; idx < 7; idx++) {
-			table.getPlayer1().getCard(table.getDeck().draw(true));
+			table.getPlayer1().addCard(table.getDeck().draw(true));
 		}
 	}
 
@@ -74,14 +89,4 @@ public class Game {
 		}
 	}
 
-	private void showTable( Hand playerHand) {
-		Console.horzLine();
-//		System.out.print(dealerHand.getName() + " -> ");
-//		dealerHand.toString();
-	//	System.out.println(" Hand total: " + dealerHand.addUpCards());
-		Console.horzLine();
-		System.out.print(playerHand.getName() + " -> ");
-		playerHand.toString();
-	//	System.out.println(" Hand total: " + playerHand.addUpCards());
-	}
 }
