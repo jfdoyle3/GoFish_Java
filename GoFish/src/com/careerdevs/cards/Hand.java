@@ -13,7 +13,6 @@ public class Hand {
 	private List<Card> cards = new ArrayList<>();
 	private HashMap<Integer, Integer> sortHand;
 	private Actor actor;
-	public int bet;
 
 	public Hand(Actor actor) {
 		this.actor = actor;
@@ -23,7 +22,6 @@ public class Hand {
 		return actor.getName();
 	}
 
-	// TODO: add a constructor takes one card for a split;
 	public Actor getActor() {
 		return actor;
 	}
@@ -67,16 +65,7 @@ public class Hand {
 		// return sortHand;
 	}
 
-	public  Card askForCards(int cardLoc) {
-		Card cardAsked = cards.get(cardLoc);
-		if (cards.indexOf(cardAsked)>0) {
-			 cards.remove(cardAsked);
-				return cardAsked;
-		} else {
-			System.out.println("no Cards- go fish");
-			return null;
-		}
-	}
+
 
 	public void revealHand() {
 		for (Card card : cards) {

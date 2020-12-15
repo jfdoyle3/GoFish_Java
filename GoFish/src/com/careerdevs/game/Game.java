@@ -23,11 +23,11 @@ public class Game {
 		
 		System.out.println("Hand: "+table.getPlayer1().toString());
 		int pickCard=Input.inputNumberText("Ask for a card from 0-6? ");
-		for (int idx=0; idx<table.getPlayer1().getCount(); idx++) {
-		Card discardedCard=table.getPlayer1().askForCards(pickCard);
-		discard.add(discardedCard);
-		System.out.println("Hand: "+table.getPlayer1().toString());
-		}
+//		for (int idx=0; idx<table.getPlayer1().getCount(); idx++) {
+//		Card discardedCard=table.getPlayer1().askForCards(pickCard);
+//		discard.add(discardedCard);
+//		System.out.println("Hand: "+table.getPlayer1().toString());
+//	}
 //		table.getPlayer1().groupCards();
 //		int pickCard=Input.inputNumberText("Pick a card flip from 0-6? ");
 //		table.getPlayer1().flipCard(pickCard);
@@ -56,6 +56,16 @@ public class Game {
 	}
 
 
+	public  void askForCards() {
+//	//	Card cardAsked = cards.get(cardLoc);
+//		if (cards.indexOf(cardAsked)>0) {
+//			 cards.remove(cardAsked);
+//				return cardAsked;
+//		} else {
+//			System.out.println("no Cards- go fish");
+//			return null;
+//		}
+	}
 
 
 	public void dealCards() {
