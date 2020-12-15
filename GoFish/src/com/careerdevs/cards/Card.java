@@ -47,4 +47,5 @@ public class Card {
 	public boolean isFaceDown() {
 		return faceDown;
 	}
+
 }

@@ -11,7 +11,7 @@ public class Hand {
 
 	private HashMap<String, List<Card>> players = new HashMap<>();
 	private List<Card> cards = new ArrayList<>();
-	private HashMap<Integer, Integer> sortHand = new HashMap<>();
+	private HashMap<Integer, Integer> sortHand;
 	private Actor actor;
 	public int bet;
 
@@ -51,8 +51,11 @@ public class Hand {
 	public int getCount() {
 		return cards.size();
 	}
-
+	public Card discard(int card) {
+		return cards.remove(card);
+	}
 	public void groupCards() {
+		sortHand = new HashMap<>();
 		for (Card card : cards) {
 			if (sortHand.containsKey(card.getValue()))
 				sortHand.put(card.getValue(),
@@ -64,12 +67,23 @@ public class Hand {
 		// return sortHand;
 	}
 
+	public  Card askForCards(int cardLoc) {
+		Card cardAsked = cards.get(cardLoc);
+		if (cards.indexOf(cardAsked)>0) {
+			 cards.remove(cardAsked);
+				return cardAsked;
+		} else {
+			System.out.println("no Cards- go fish");
+			return null;
+		}
+	}
+
 	public void revealHand() {
 		for (Card card : cards) {
 			if (card.isFaceDown())
 				card.flip();
 
-		//	System.out.print(card.toString() + " ");
+			// System.out.print(card.toString() + " ");
 		}
 	}
 
@@ -78,7 +92,7 @@ public class Hand {
 			if (!(card.isFaceDown()))
 				card.flip();
 
-		//	System.out.print(card.toString() + " ");
+			// System.out.print(card.toString() + " ");
 		}
 	}
 }

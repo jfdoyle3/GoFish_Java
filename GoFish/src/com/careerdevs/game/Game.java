@@ -1,6 +1,7 @@
 package com.careerdevs.game;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import com.careerdevs.cards.Card;
@@ -20,10 +21,25 @@ public class Game {
 		table.getDeck().shuffle();
 		dealCards();
 		
-		System.out.println(table.getPlayer1().toString());
-		int pickCard=input.inputNumberText("Pick a card flip from 0-6? ");
-		table.getPlayer1().flipCard(pickCard);
-		System.out.println(table.getPlayer1().toString());
+		System.out.println("Hand: "+table.getPlayer1().toString());
+		int pickCard=Input.inputNumberText("Ask for a card from 0-6? ");
+		for (int idx=0; idx<table.getPlayer1().getCount(); idx++) {
+		Card discardedCard=table.getPlayer1().askForCards(pickCard);
+		discard.add(discardedCard);
+		System.out.println("Hand: "+table.getPlayer1().toString());
+		}
+//		table.getPlayer1().groupCards();
+//		int pickCard=Input.inputNumberText("Pick a card flip from 0-6? ");
+//		table.getPlayer1().flipCard(pickCard);
+//		System.out.println("Hand: card flipped: "+table.getPlayer1().toString());
+//		table.getPlayer1().groupCards();
+//		Card card=table.getPlayer1().discard(1);
+//		discard.add(card);
+//		System.out.println("Hand: discarded: "+table.getPlayer1().toString());
+//		table.getPlayer1().groupCards();
+//		System.out.println("card:");
+//		for (Card cards : discard)
+//			System.out.print(cards+" ");
 		
 		
 		//Card passedCard=new Card(1,"1");
@@ -39,7 +55,7 @@ public class Game {
 		System.out.println("\nend of Line");
 	}
 
-	public 
+
 
 
 	public void dealCards() {
