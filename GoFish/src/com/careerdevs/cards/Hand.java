@@ -9,7 +9,7 @@ import com.careerdevs.actors.Actor;
 
 public class Hand {
 
-	private HashMap<String, List<Card>> players = new HashMap<>();
+	
 	private List<Card> cards = new ArrayList<>();
 	private HashMap<Integer, Integer> sortHand;
 	private Actor actor;
