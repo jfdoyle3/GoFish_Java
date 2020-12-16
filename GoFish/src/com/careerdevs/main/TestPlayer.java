@@ -4,34 +4,39 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import com.careerdevs.cards.Card;
+import com.careerdevs.cards.Deck;
+import com.careerdevs.cards.GameDeck;
+
 public class TestPlayer {
 
 	public static void main(String[] args) {
 	
 		HashMap<String, Integer> hashPlayer=new HashMap<>();
-		List<ArrayList<Integer>> listPlayer=new ArrayList<ArrayList<Integer>>();
+		List<ArrayList<Card>> listPlayer=new ArrayList<ArrayList<Card>>();
+		Deck deck=new GameDeck();
+		deck.shuffle();
 		// HashMap
 		
 		
 		
 		
 		//List
-		ArrayList<Integer> hand1=new ArrayList<Integer>();
-		hand1.add(1);
-		hand1.add(3);
-		hand1.add(4);
-		hand1.add(7);
-		hand1.add(9);
-		hand1.add(8);
+		ArrayList<Card> hand1=new ArrayList<Card>();
+		hand1.add(deck.draw(true));
+		hand1.add(deck.draw(true));
+		hand1.add(deck.draw(true));
+		hand1.add(deck.draw(true));
+		hand1.add(deck.draw(true));
+		hand1.add(deck.draw(true));
 		listPlayer.add(hand1);
 		
-		ArrayList<Integer> hand2=new ArrayList<>();
-		hand2.add(2);
-		hand2.add(6);
-		hand2.add(5);
-		hand2.add(8);
-		hand2.add(1);
-		hand2.add(4);
+		ArrayList<Card> hand2=new ArrayList<Card>();
+		hand2.add(deck.draw(true));
+		hand2.add(deck.draw(true));
+		hand2.add(deck.draw(true));
+		hand2.add(deck.draw(true));
+		hand2.add(deck.draw(true));
 		listPlayer.add(hand2);
 		
 //		listPlayer.forEach((list)->

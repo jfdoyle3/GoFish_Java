@@ -7,10 +7,9 @@ import com.careerdevs.cards.Card;
 import com.careerdevs.cards.Deck;
 
 public class Dealer implements Actor {
-	static String NAME="Dealer";
-	static int DECISION=17;
-	static int HIT=1;
-	static int STAND=2;
+	static String NAME="HAL9000";
+	static int ASK=1;
+	static int GOFISH=2;
 
 	@Override
 	public String getName() {

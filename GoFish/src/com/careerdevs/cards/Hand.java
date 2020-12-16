@@ -6,10 +6,10 @@ import java.util.HashMap;
 import java.util.List;
 
 import com.careerdevs.actors.Actor;
+import com.careerdevs.ui.Input;
 
 public class Hand {
 
-	
 	private List<Card> cards = new ArrayList<>();
 	private HashMap<Integer, Integer> sortHand;
 	private Actor actor;
@@ -38,6 +38,7 @@ public class Hand {
 	public void addCard(Card card) {
 		cards.add(card);
 	}
+
 	public int getCardValue(int card) {
 		return cards.get(card).getValue();
 	}
@@ -49,9 +50,11 @@ public class Hand {
 	public int getCount() {
 		return cards.size();
 	}
+
 	public Card discard(int card) {
 		return cards.remove(card);
 	}
+
 	public void groupCards() {
 		sortHand = new HashMap<>();
 		for (Card card : cards) {
@@ -64,8 +67,6 @@ public class Hand {
 		System.out.println(sortHand);
 		// return sortHand;
 	}
-
-
 
 	public void revealHand() {
 		for (Card card : cards) {
@@ -84,4 +85,20 @@ public class Hand {
 			// System.out.print(card.toString() + " ");
 		}
 	}
+	
+	
+
+	// TODO: bubble sort cards ...
+
+	// TODO: for loop thru cards and find index or remove from hand to add to
+	// new hand or discard for multiple cards to be xfered.
+	public void findCards(int cardValue) {
+		for (int idx=0; idx<getCount(); idx++) {
+			if (getCardValue(idx)==cardValue) {
+				flipCard(idx);
+			}
+			
+		}
+	}
+
 }
