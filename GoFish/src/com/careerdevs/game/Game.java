@@ -1,7 +1,7 @@
 package com.careerdevs.game;
 
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import com.careerdevs.cards.Card;
@@ -24,11 +24,17 @@ public class Game {
 		dealCards();
 
 		// Display hand - ask for a card - finds card with same value and flip them - display hand.
-		System.out.println("Hand: " + table.getPlayer1().toString());
+		System.out.println("Player 1: Hand: " + table.getPlayer1().toString());
+		System.out.println("Player 2: Hand: " + table.getPlayer2().toString());
 		int value = input.inputNumberText("Which card? ");
-		table.getPlayer1().findCards(value);
-		System.out.println("Hand: " + table.getPlayer1().toString());
+		table.getPlayer2().findCards(value);
+//		System.out.print("\033[H\033[2J");  
+//	    System.out.flush();
+		// System.out.println("\f");
 		
+		System.out.println("\b");
+		System.out.println("Player 1: Hand: " + table.getPlayer1().toString());
+		System.out.println("Player 2: Hand: " + table.getPlayer2().toString());
 
 
 		// Pass cards into hand
@@ -50,6 +56,7 @@ public class Game {
 	public void dealCards() {
 		for (int idx = 0; idx < 7; idx++) {
 			table.getPlayer1().addCard(table.getDeck().draw(true));
+			table.getPlayer2().addCard(table.getDeck().draw(true));
 		}
 	}
 
