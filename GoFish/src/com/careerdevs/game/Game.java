@@ -39,16 +39,13 @@ public class Game {
 		System.out.println("\nend of Line");
 	}
 
-	public void askForCards() {
-		// Card cardAsked = cards.get(cardLoc);
-		// if (cards.indexOf(cardAsked)>0) {
-		// cards.remove(cardAsked);
-		// return cardAsked;
-		// } else {
-		// System.out.println("no Cards- go fish");
-		// return null;
-		// }
-	}
+//	public void findCards(int cardValue) {
+//		for (int idx=0; idx<getCount(); idx++) {
+//			if (getCardValue(idx)==cardValue) {
+//				flipCard(idx);
+//			}
+//			
+//		}
 
 	public void dealCards() {
 		for (int idx = 0; idx < 7; idx++) {
