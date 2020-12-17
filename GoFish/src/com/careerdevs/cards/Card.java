@@ -8,6 +8,7 @@ public class Card {
 	private int value;
 	private String suit;
 	private boolean faceDown = true;
+	private final static String[] SUITS = { "♠", "♥", "♧", "♦" };
 
 	public Card(int value, String suit) {
 		this.value = value;

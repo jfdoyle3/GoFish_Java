@@ -5,7 +5,7 @@ import com.careerdevs.cards.GameDeck;
 import com.careerdevs.cards.Hand;
 import com.careerdevs.objects.Table;
 
-public class Tests {
+public class TestsFlipping {
 
 	public static void main(String[] args) {
 		

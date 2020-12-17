@@ -19,13 +19,8 @@ public class Dealer implements Actor {
 
 
 	@Override
-	public int getAction(int score) {
-		//return score<DECISION ? HIT:STAND;
-		 if (score< 17) { 
-			 return 1;
-		 }else {
-			 return 2;
-		 }
+	public int getAction(Hand hand) {
+		hand.
 	}
 	
 

@@ -38,6 +38,10 @@ public class Hand {
 	public void addCard(Card card) {
 		cards.add(card);
 	}
+	
+	public Card getCard(int index) {
+		return cards.get(index);
+	}
 
 	public int getCardValue(int card) {
 		return cards.get(card).getValue();
@@ -55,18 +59,19 @@ public class Hand {
 		return cards.remove(card);
 	}
 
-	public void groupCards() {
-		sortHand = new HashMap<>();
-		for (Card card : cards) {
-			if (sortHand.containsKey(card.getValue()))
-				sortHand.put(card.getValue(),
-						sortHand.get(card.getValue()) + 1);
-			else
-				sortHand.put(card.getValue(), 1);
-		}
-		System.out.println(sortHand);
-		// return sortHand;
-	}
+	// TODO: use GroupCard to find books and use key to remove from hand.
+//	public HashMap<Integer,Integer> groupCards() {
+//		sortHand = new HashMap<>();
+//		for (Card card : cards) {
+//			if (sortHand.containsKey(card.getValue()))
+//				sortHand.put(card.getValue(),
+//						sortHand.get(card.getValue()) + 1);
+//			else
+//				sortHand.put(card.getValue(), 1);
+//		}
+//		System.out.println(sortHand);
+//		 return sortHand;
+//	}
 
 	public void revealHand() {
 		for (Card card : cards) {
@@ -81,23 +86,19 @@ public class Hand {
 		for (Card card : cards) {
 			if (!(card.isFaceDown()))
 				card.flip();
-
-			// System.out.print(card.toString() + " ");
 		}
 	}
-	
-	
 
 	// TODO: bubble sort cards ...
 
 	// TODO: for loop thru cards and find index or remove from hand to add to
 	// new hand or discard for multiple cards to be xfered.
 	public void findCards(int cardValue) {
-		for (int idx=0; idx<getCount(); idx++) {
-			if (getCardValue(idx)==cardValue) {
+		for (int idx = 0; idx < getCount(); idx++) {
+			if (getCardValue(idx) == cardValue) {
 				flipCard(idx);
 			}
-			
+
 		}
 	}
 
