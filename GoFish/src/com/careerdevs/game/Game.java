@@ -16,8 +16,8 @@ public class Game {
 	private Input input = new Input();
 	private HashMap<Integer, Integer> sortHand;
 	private boolean emptyHand;
-	private boolean inHand=true;
-	
+	private boolean inHand = false;
+
 	public void playGame() {
 
 		// Create Deck / Shuffle Deck
@@ -25,39 +25,39 @@ public class Game {
 
 		// Deal Cards
 		dealCards();
-		do {
+
 		// Display hand - ask for a card - finds card with same value and flip
 		// them - display hand.
-		displayTable();
+		// displayTable();
 
 		// Human player choose card value
-		
-	//	int pickCard = input.inputNumberText("Which card? ");
-	//	findCards(table.getPlayer2(), table.getPlayer1(), pickCard);
+
+		// int pickCard = input.inputNumberText("Which card? ");
+		// findCards(table.getPlayer2(), table.getPlayer1(), pickCard);
 
 		// Draw on Go Fish
 		// table.getPlayer1().addCard(table.getDeck().draw(true));
-		
-		
-		// Computer
-		//System.out.println("Computer picks: ");
-		
-		//int computerPick = 3;
-		//findCards(table.getPlayer1(), table.getPlayer2(), computerPick);
-		
-		//if (table.getPlayer1().getCount()==0 || table.getPlayer2().getCount()==0)
-		//	emptyHand=true;
-		
-		}while(!actorTurn(table.getPlayer1()));
 
+		// Computer
+		// System.out.println("Computer picks: ");
+
+		// int computerPick = 3;
+		// findCards(table.getPlayer1(), table.getPlayer2(), computerPick);
+
+		// if (table.getPlayer1().getCount()==0 ||
+		// table.getPlayer2().getCount()==0)
+		// emptyHand=true;
+
+		do {
+		} while (!actorTurn(table.getPlayer1()));
 
 		// displayTable();
-	
+
 		// Pass cards into hand
 		// Card passedCard=new Card(1,"1");
 		// table.getPlayer1().addCard(passedCard);
 		// System.out.println(table.getPlayer1().toString());
-		
+
 		System.out.println("\nend of Line");
 	}
 
@@ -74,9 +74,9 @@ public class Game {
 	}
 
 	private int getAction(Hand hand) {
-		return hand.getActor().getAction(); 
+		return hand.getActor().getAction();
 		// 1 or 2
-		//return ;
+		// return ;
 	}
 
 	private boolean performAction(Hand hand, int action) {
@@ -87,7 +87,8 @@ public class Game {
 				return false;
 			case 2 :
 				Card card = table.getDeck().draw(true);
-				System.out.println(hand.getName() + " Go Fish - picked: " + card);
+				System.out
+						.println(hand.getName() + " Go Fish - picked: " + card);
 				hand.addCard(card);
 				return true;
 			default :
@@ -95,18 +96,18 @@ public class Game {
 				return true;
 		}
 	}
-	public void findCards(Hand player, Hand player2, int cardValue) {		
+	public void findCards(Hand player, Hand player2, int cardValue) {
+
 		for (int idx = 0; idx < player.getCount(); idx++) {
-			
 			if (player.getCardValue(idx) == cardValue) {
-				
 				Card card = player.discard(idx);
-				System.out.println("discarded: "+idx);
+				System.out.println("discarded: " + idx);
 				player2.addCard(card);
-				System.out.println("added: "+idx);
-			} 
+				System.out.println("added: " + idx);
+
+			}
 		}
-		
+
 	}
 
 	public void dealCards() {
