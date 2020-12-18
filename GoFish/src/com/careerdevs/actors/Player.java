@@ -28,7 +28,7 @@ public class Player implements Actor {
 
 
 	@Override
-	public int getAction() {
+	public int getAction(int handSize) {
 		int option;
 		do {
 			option = Input.inputNumberText("Choices: 1-Choose or 2 - Go Fish ");

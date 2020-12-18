@@ -49,7 +49,7 @@ public class Game {
 		// emptyHand=true;
 
 		do {
-		} while (!actorTurn(table.getPlayer1()));
+		} while (!actorTurn(table.getPlayer2()));
 
 		// displayTable();
 
@@ -74,7 +74,7 @@ public class Game {
 	}
 
 	private int getAction(Hand hand) {
-		return hand.getActor().getAction();
+		return hand.getActor().getAction(hand.getCount());
 		// 1 or 2
 		// return ;
 	}
@@ -87,8 +87,7 @@ public class Game {
 				return false;
 			case 2 :
 				Card card = table.getDeck().draw(true);
-				System.out
-						.println(hand.getName() + " Go Fish - picked: " + card);
+				System.out.println(hand.getName() + " Go Fish - picked: " + card);
 				hand.addCard(card);
 				return true;
 			default :

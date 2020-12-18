@@ -1,12 +1,9 @@
 package com.careerdevs.actors;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.careerdevs.cards.Card;
-import com.careerdevs.cards.Deck;
+import java.util.Random;
 
 public class Dealer implements Actor {
+	private Random rand;  
 	static String NAME="HAL9000";
 	//static int ASK=1;
 	//static int GOFISH=2;
@@ -17,11 +14,10 @@ public class Dealer implements Actor {
 	}
 
 	@Override
-	public int getAction() {
-		// need to get the size of the hand and randomly pick index 
-		// get card value of index and ask for that.
-		
-		return 2;
+	public int getAction(int handSize) {
+		rand = new Random();
+		int number=rand.nextInt(handSize);
+		return number;
 	}
 	
 
