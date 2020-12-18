@@ -7,7 +7,6 @@ import com.careerdevs.cards.Card;
 import com.careerdevs.cards.Deck;
 import com.careerdevs.cards.Hand;
 import com.careerdevs.ui.Console;
-import com.careerdevs.ui.ErrorConsole;
 import com.careerdevs.ui.Input;
 
 public class Player implements Actor {
@@ -29,10 +28,10 @@ public class Player implements Actor {
 
 
 	@Override
-	public int getAction(int score) {
+	public int getAction() {
 		int option;
 		do {
-			option = Input.inputNumberText("Choices: 1-Hit or 2-Stand? ");
+			option = Input.inputNumberText("Choices: 1-Choose or 2 - Go Fish ");
 		} while (option < 1 || option > 2);
 
 		return option;
