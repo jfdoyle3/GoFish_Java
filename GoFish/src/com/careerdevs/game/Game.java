@@ -46,10 +46,11 @@ public class Game {
 		// if (table.getPlayer1().getCount()==0 ||
 		// table.getPlayer2().getCount()==0)
 		// emptyHand=true;
-
-		do {} while (!actorTurn(table.getPlayer1()));
-		do {} while (!actorTurn(table.getPlayer2()));
-
+		do {
+			do {
+			} while (!actorTurn(table.getPlayer1()));
+			// do {} while (!actorTurn(table.getPlayer2()));
+		} while (table.getPlayer2().getCount() > 0);
 		// displayTable();
 
 		// Pass cards into hand
@@ -74,34 +75,33 @@ public class Game {
 
 	private int getAction(Hand hand) {
 		return hand.getActor().getAction(hand.getCount());
-		
+
 	}
 
 	private boolean performAction(Hand hand, int action) {
-	
-				int pickCard = action;
-				System.out.println("Computer chooses: "+pickCard);
-				findCards(table.getPlayer1(), table.getPlayer2(), pickCard);
-				displayTable();
-				return true;
-//		
-//				Card card = table.getDeck().draw(true);
-//				System.out.println(hand.getName() + " Go Fish - picked: " + card);
-//				hand.addCard(card);
-//				return true;
-//			
-//				System.out.println("error! default case Go Fish");
-//				return true;
-		
+
+		int pickCard = action;
+		// System.out.println("Computer chooses: "+pickCard);
+		findCards(table.getPlayer2(), table.getPlayer1(), pickCard);
+		displayTable();
+		return true;
+		//
+		// Card card = table.getDeck().draw(true);
+		// System.out.println(hand.getName() + " Go Fish - picked: " + card);
+		// hand.addCard(card);
+		// return true;
+		//
+		// System.out.println("error! default case Go Fish");
+		// return true;
+
 	}
 	public void findCards(Hand player, Hand player2, int cardValue) {
 
 		for (int idx = 0; idx < player.getCount(); idx++) {
 			if (player.getCardValue(idx) == cardValue) {
 				Card card = player.discard(idx);
-				System.out.println("discarded: " + idx);
 				player2.addCard(card);
-				System.out.println("added: " + idx);
+				idx--;
 			}
 		}
 
