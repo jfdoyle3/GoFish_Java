@@ -30,9 +30,7 @@ public class Player implements Actor {
 	@Override
 	public int getAction(int handSize) {
 		int option;
-		do {
-			option = Input.inputNumberText("Choices: 1-Choose or 2 - Go Fish ");
-		} while (option < 1 || option > 2);
+			option = input.inputNumberText("Which card? ");
 
 		return option;
 	}

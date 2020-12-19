@@ -3,7 +3,7 @@ package com.careerdevs.main;
 import com.careerdevs.cards.Deck;
 import com.careerdevs.cards.GameDeck;
 import com.careerdevs.cards.Hand;
-import com.careerdevs.objects.Table;
+import com.careerdevs.game.Table;
 
 public class TestsFlipping {
 

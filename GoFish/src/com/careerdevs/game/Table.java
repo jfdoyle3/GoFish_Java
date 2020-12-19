@@ -1,4 +1,4 @@
-package com.careerdevs.objects;
+package com.careerdevs.game;
 
 import com.careerdevs.actors.Dealer;
 import com.careerdevs.actors.Player;

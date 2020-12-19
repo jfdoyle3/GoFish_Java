@@ -60,18 +60,18 @@ public class Hand {
 	}
 
 	// TODO: use GroupCard to find books and use key to remove from hand.
-//	public HashMap<Integer,Integer> groupCards() {
-//		sortHand = new HashMap<>();
-//		for (Card card : cards) {
-//			if (sortHand.containsKey(card.getValue()))
-//				sortHand.put(card.getValue(),
-//						sortHand.get(card.getValue()) + 1);
-//			else
-//				sortHand.put(card.getValue(), 1);
-//		}
-//		System.out.println(sortHand);
-//		 return sortHand;
-//	}
+	public HashMap<Integer,Integer> groupCards() {
+		sortHand = new HashMap<>();
+		for (Card card : cards) {
+			if (sortHand.containsKey(card.getValue()))
+				sortHand.put(card.getValue(),
+						sortHand.get(card.getValue()) + 1);
+			else
+				sortHand.put(card.getValue(), 1);
+		}
+		System.out.println(sortHand);
+		 return sortHand;
+	}
 
 	public void revealHand() {
 		for (Card card : cards) {
@@ -89,7 +89,6 @@ public class Hand {
 		}
 	}
 
-	// TODO: bubble sort cards ...
 
 	// TODO: for loop thru cards and find index or remove from hand to add to
 	// new hand or discard for multiple cards to be xfered.

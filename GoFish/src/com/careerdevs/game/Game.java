@@ -6,7 +6,6 @@ import java.util.List;
 
 import com.careerdevs.cards.Card;
 import com.careerdevs.cards.Hand;
-import com.careerdevs.objects.Table;
 import com.careerdevs.ui.Console;
 import com.careerdevs.ui.Input;
 
@@ -48,8 +47,8 @@ public class Game {
 		// table.getPlayer2().getCount()==0)
 		// emptyHand=true;
 
-		do {
-		} while (!actorTurn(table.getPlayer2()));
+		do {} while (!actorTurn(table.getPlayer1()));
+		do {} while (!actorTurn(table.getPlayer2()));
 
 		// displayTable();
 
@@ -75,25 +74,25 @@ public class Game {
 
 	private int getAction(Hand hand) {
 		return hand.getActor().getAction(hand.getCount());
-		// 1 or 2
-		// return ;
+		
 	}
 
 	private boolean performAction(Hand hand, int action) {
-		switch (action) {
-			case 1 :
-				int pickCard = input.inputNumberText("Which card? ");
-				findCards(table.getPlayer2(), table.getPlayer1(), pickCard);
-				return false;
-			case 2 :
-				Card card = table.getDeck().draw(true);
-				System.out.println(hand.getName() + " Go Fish - picked: " + card);
-				hand.addCard(card);
+	
+				int pickCard = action;
+				System.out.println("Computer chooses: "+pickCard);
+				findCards(table.getPlayer1(), table.getPlayer2(), pickCard);
+				displayTable();
 				return true;
-			default :
-				System.out.println("error! default case Go Fish");
-				return true;
-		}
+//		
+//				Card card = table.getDeck().draw(true);
+//				System.out.println(hand.getName() + " Go Fish - picked: " + card);
+//				hand.addCard(card);
+//				return true;
+//			
+//				System.out.println("error! default case Go Fish");
+//				return true;
+		
 	}
 	public void findCards(Hand player, Hand player2, int cardValue) {
 
@@ -103,7 +102,6 @@ public class Game {
 				System.out.println("discarded: " + idx);
 				player2.addCard(card);
 				System.out.println("added: " + idx);
-
 			}
 		}
 

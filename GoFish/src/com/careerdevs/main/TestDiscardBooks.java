@@ -32,25 +32,25 @@ public class TestDiscardBooks {
 
 		System.out.println("Books: " + books);
 		System.out.println("Hand: " + hm);
-
 		System.out.println("end of line");
 	}
 	public static int findBooks(HashMap<Integer, Integer> hm) {
-		
-		 for (Entry<Integer, Integer> entry : hm.entrySet()) {
-			 if(entry.getValue()==4) {
+
+		for (Entry<Integer, Integer> entry : hm.entrySet()) {
+			if (entry.getValue() >=2) {
 				// hm.remove(entry.getKey());
-				 System.out.println("card: "+entry.getKey());
-			 }
-	          //  System.out.println(entry.getKey() + " = " + entry.getValue());
-	        }
-//			if (key == 4) {
-//				
-//		//		return entry.getKey();
-//				 System.out.println("Found at key: "+entry.getKey());
-//			}
-//		//	System.out.println("Key : " + entry.getKey() + "   Value : "+ entry.getValue());
-//		}
+				System.out.println("card: " + entry.getKey());
+			}
+			// System.out.println(entry.getKey() + " = " + entry.getValue());
+		}
+		// if (key == 4) {
+		//
+		// // return entry.getKey();
+		// System.out.println("Found at key: "+entry.getKey());
+		// }
+		// // System.out.println("Key : " + entry.getKey() + " Value : "+
+		// entry.getValue());
+		// }
 		return 1;
 	}
 
