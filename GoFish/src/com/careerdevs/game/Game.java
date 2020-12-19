@@ -17,8 +17,8 @@ public class Game {
 	private HashMap<Integer, Integer> sortHand;
 	private boolean emptyHand;
 	private boolean inHand = false;
-	private int scorePlayer=0;
-	private int scorePlayer2=0;
+	private int playerScore = 0;
+	private int computerScore = 0;
 
 	public void playGame() {
 
@@ -54,15 +54,15 @@ public class Game {
 			} while (!actorTurn(table.getPlayer1()));
 			System.out.println("go fish player");
 			table.getPlayer1().addCard(table.getDeck().draw(true));
-			HashMap<Integer,Integer> hashHand=table.getPlayer1().groupCards();
-			findBooks(hashHand);
-			
-//			do {
-//			} while (!actorTurn(table.getPlayer2()));
-//			System.out.println("go fish computer");
-//			table.getPlayer2().addCard(table.getDeck().draw(true));
-			
-			
+			HashMap<Integer, Integer> hashHand = table.getPlayer1()
+					.groupCards();
+			int cardValue = findBooks(hashHand);
+			removeBooks(table.getPlayer1(), cardValue);
+			// do {
+			// } while (!actorTurn(table.getPlayer2()));
+			// System.out.println("go fish computer");
+			// table.getPlayer2().addCard(table.getDeck().draw(true));
+
 		} while (table.getPlayer2().getCount() > 0
 				|| table.getPlayer2().getCount() > 0);
 		// displayTable();
@@ -93,7 +93,7 @@ public class Game {
 	}
 
 	private boolean performAction(Hand hand, int action) {
-		
+
 		int pickCard = action;
 		// System.out.println("Computer chooses: "+pickCard);
 		findCards(table.getPlayer2(), table.getPlayer1(), pickCard);
@@ -122,19 +122,30 @@ public class Game {
 	public void dealCards() {
 		for (int idx = 0; idx < 7; idx++) {
 			table.getPlayer1().addCard(table.getDeck().draw(true));
-			table.getPlayer2().addCard(table.getDeck().draw(true));
+			table.getPlayer2().addCard(table.getDeck().draw(false));
 		}
 	}
-	
-	public  int findBooks(HashMap<Integer, Integer> hm) {
+
+	public int findBooks(HashMap<Integer, Integer> hm) {
 		for (Entry<Integer, Integer> entry : hm.entrySet()) {
-			if (entry.getValue() >=2) {
+			if (entry.getValue() >= 2) {
 				// hm.remove(entry.getKey());
 				System.out.println("card: " + entry.getKey());
 				return entry.getKey();
 			}
 		}
 		return -1;
+	}
+
+	public void removeBooks(Hand hand, int cardValue) {
+		for (int idx = 0; idx < hand.getCount(); idx++) {
+			if (hand.getCardValue(idx) == cardValue) {
+				hand.discard(idx);
+				idx--;
+			}
+		}
+		playerScore++;
+		System.out.println("P Score: "+playerScore);
 	}
 	// public void groupCards() {
 	// sortHand = new HashMap<>();
