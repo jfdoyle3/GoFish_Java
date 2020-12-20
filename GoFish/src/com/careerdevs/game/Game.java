@@ -28,27 +28,7 @@ public class Game {
 		// Deal Cards
 		dealCards();
 
-		// Display hand - ask for a card - finds card with same value and flip
-		// them - display hand.
-		// displayTable();
-
-		// Human player choose card value
-
-		// int pickCard = input.inputNumberText("Which card? ");
-		// findCards(table.getPlayer2(), table.getPlayer1(), pickCard);
-
-		// Draw on Go Fish
-		// table.getPlayer1().addCard(table.getDeck().draw(true));
-
-		// Computer
-		// System.out.println("Computer picks: ");
-
-		// int computerPick = 3;
-		// findCards(table.getPlayer1(), table.getPlayer2(), computerPick);
-
-		// if (table.getPlayer1().getCount()==0 ||
-		// table.getPlayer2().getCount()==0)
-		// emptyHand=true;
+		
 		//do {
 			do {
 			} while (!actorTurn(table.getPlayer1()));
