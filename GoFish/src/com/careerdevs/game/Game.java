@@ -17,7 +17,8 @@ public class Game {
 	private HashMap<Integer, Integer> sortHand;
 	private boolean emptyHand;
 	private boolean inHand = false;
-	private int playerScore=0;
+	private int playerOneScore=0;
+	private int playerTwoScore=0;
 	private HashMap<String, Integer> scoreBoard;
 
 	public void playGame() {
@@ -37,9 +38,8 @@ public class Game {
 			HashMap<Integer, Integer> hashHand = table.getPlayer1()
 					.groupCards();
 			int booksFound=findBooks(hashHand, playerScore);
-			playerScore=+booksFound;
-			System.out.println("gl: "+playerScore);
-			//removeBooks(table.getPlayer1(), cardValue);
+			playerOneScore=+booksFound;
+//			removeBooks(table.getPlayer1(), cardValue);
 //			 do {
 //			 } while (!actorTurn(table.getPlayer2()));
 //			 System.out.println("go fish computer");
@@ -48,7 +48,11 @@ public class Game {
 		} while (table.getPlayer2().getCount() > 0
 				|| table.getPlayer2().getCount() > 0);
 	
-
+		if(playerOneScore>playerTwoScore) {
+			System.out.println(table.getPlayer1().getName()+" Wins.");
+		} else {
+			System.out.println(table.getPlayer2().getName()+" Wins.");
+		}
 			
 		System.out.println("\nend of Line");
 	}
@@ -124,8 +128,8 @@ public class Game {
 				idx--;
 			}
 		}
-		playerScore++;
-		System.out.println("P Score: "+playerScore);
+		playerOneScore++;
+		System.out.println("P Score: "+playerOneScore);
 	}
 	// public void groupCards() {
 	// sortHand = new HashMap<>();
