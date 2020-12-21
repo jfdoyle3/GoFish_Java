@@ -29,7 +29,7 @@ public class Game {
 		dealCards();
 
 		
-		//do {
+		do {
 			do {
 			} while (!actorTurn(table.getPlayer1()));
 			System.out.println("go fish player");
@@ -38,22 +38,17 @@ public class Game {
 					.groupCards();
 			int booksFound=findBooks(hashHand, playerScore);
 			playerScore=+booksFound;
-			
 			System.out.println("gl: "+playerScore);
 			//removeBooks(table.getPlayer1(), cardValue);
-			// do {
-			// } while (!actorTurn(table.getPlayer2()));
-			// System.out.println("go fish computer");
-			// table.getPlayer2().addCard(table.getDeck().draw(true));
+//			 do {
+//			 } while (!actorTurn(table.getPlayer2()));
+//			 System.out.println("go fish computer");
+//			 table.getPlayer2().addCard(table.getDeck().draw(true));
 
-	//	} while (table.getPlayer2().getCount() > 0
-	//			|| table.getPlayer2().getCount() > 0);
-		// displayTable();
+		} while (table.getPlayer2().getCount() > 0
+				|| table.getPlayer2().getCount() > 0);
+	
 
-		// Pass cards into hand
-		// Card passedCard=new Card(1,"1");
-		// table.getPlayer1().addCard(passedCard);
-		// System.out.println(table.getPlayer1().toString());
 			
 		System.out.println("\nend of Line");
 	}
