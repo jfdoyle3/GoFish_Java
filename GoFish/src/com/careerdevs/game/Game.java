@@ -37,7 +37,7 @@ public class Game {
 			table.getPlayer1().addCard(table.getDeck().draw(true));
 			HashMap<Integer, Integer> hashHand = table.getPlayer1()
 					.groupCards();
-			int booksFound=findBooks(hashHand, playerScore);
+			int booksFound=findBooks(hashHand, playerOneScore);
 			playerOneScore=+booksFound;
 //			removeBooks(table.getPlayer1(), cardValue);
 //			 do {

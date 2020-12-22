@@ -19,13 +19,7 @@ public class TestDiscardBooks {
 		hm.put(2, 2);
 		hm.put(1, 1);
 
-		// User Input
-		// System.out.println("Hand: "+hm);
-		// System.out.println("key ");
-		// int key=input.nextInt();
-		// System.out.println("value ");
-		// int value=input.nextInt();
-		// hm.put(key, value);
+
 		System.out.println("Hand: " + hm);
 
 		int books = findBooks(hm);
@@ -43,14 +37,7 @@ public class TestDiscardBooks {
 			}
 			// System.out.println(entry.getKey() + " = " + entry.getValue());
 		}
-		// if (key == 4) {
-		//
-		// // return entry.getKey();
-		// System.out.println("Found at key: "+entry.getKey());
-		// }
-		// // System.out.println("Key : " + entry.getKey() + " Value : "+
-		// entry.getValue());
-		// }
+
 		return 1;
 	}
 
