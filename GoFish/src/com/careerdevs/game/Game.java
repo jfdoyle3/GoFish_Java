@@ -23,27 +23,22 @@ public class Game {
 
 	public void playGame() {
 		scoreBoard=new HashMap<String,Integer>();
-		// Create Deck / Shuffle Deck
 		table.getDeck().shuffle();
-
 		// Deal Cards
 		dealCards();
-
-		
 		do {
-			do {
-			} while (!actorTurn(table.getPlayer1()));
-			System.out.println("go fish player");
-			table.getPlayer1().addCard(table.getDeck().draw(true));
-			HashMap<Integer, Integer> hashHand = table.getPlayer1()
-					.groupCards();
-			int booksFound=findBooks(hashHand, playerOneScore);
-			playerOneScore=+booksFound;
-//			removeBooks(table.getPlayer1(), cardValue);
-//			 do {
-//			 } while (!actorTurn(table.getPlayer2()));
-//			 System.out.println("go fish computer");
-//			 table.getPlayer2().addCard(table.getDeck().draw(true));
+//			do {
+//			} while (!actorTurn(table.getPlayer1()));
+//			
+//			System.out.println("go fish player");
+//			table.getPlayer1().addCard(table.getDeck().draw(true));
+//			table.getPlayer1().revealHand();
+//			getPoints();
+
+		 do {
+			 } while (!actorTurn(table.getPlayer2()));
+		 System.out.println("go fish computer");
+			 table.getPlayer2().addCard(table.getDeck().draw(true));
 
 		} while (table.getPlayer2().getCount() > 0
 				|| table.getPlayer2().getCount() > 0);
@@ -55,6 +50,14 @@ public class Game {
 		}
 			
 		System.out.println("\nend of Line");
+	}
+
+	private void getPoints() {
+		HashMap<Integer, Integer> hashHand = table.getPlayer1()
+				.groupCards();
+		int booksFound=findBooks(hashHand, playerOneScore);
+		playerOneScore=+booksFound;
+		
 	}
 
 	private void displayTable() {
@@ -113,6 +116,7 @@ public class Game {
 			if (entry.getValue()%2==0) {
 				// hm.remove(entry.getKey());
 				score++;
+				removeBooks(table.getPlayer1(), entry.getKey());
 			//	System.out.println("card: " + entry.getKey());
 			//	return entry.getKey();
 			}
