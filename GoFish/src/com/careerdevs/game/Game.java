@@ -113,7 +113,7 @@ public class Game {
 			if (entry.getValue()%2==0) {
 				// hm.remove(entry.getKey());
 				score++;
-				System.out.println("card: " + entry.getKey());
+			//	System.out.println("card: " + entry.getKey());
 			//	return entry.getKey();
 			}
 		}

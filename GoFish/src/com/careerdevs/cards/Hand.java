@@ -69,7 +69,7 @@ public class Hand {
 			else
 				sortHand.put(card.getValue(), 1);
 		}
-		System.out.println(sortHand);
+	//	System.out.println(sortHand);
 		 return sortHand;
 	}
 
