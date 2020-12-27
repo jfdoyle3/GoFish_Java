@@ -17,47 +17,54 @@ public class Game {
 	private HashMap<Integer, Integer> sortHand;
 	private boolean emptyHand;
 	private boolean inHand = false;
-	private int playerOneScore=0;
-	private int playerTwoScore=0;
+	private int playerOneScore = 0;
+	private int playerTwoScore = 0;
 	private HashMap<String, Integer> scoreBoard;
 
 	public void playGame() {
-		scoreBoard=new HashMap<String,Integer>();
+		scoreBoard = new HashMap<String, Integer>();
 		table.getDeck().shuffle();
 		// Deal Cards
 		dealCards();
 		do {
-//			do {
-//			} while (!actorTurn(table.getPlayer1()));
-//			
-//			System.out.println("go fish player");
-//			table.getPlayer1().addCard(table.getDeck().draw(true));
-//			table.getPlayer1().revealHand();
-//			getPoints();
+			// do {
+			// } while (!actorTurn(table.getPlayer1()));
+			//
+			// System.out.println("go fish player");
+			// table.getPlayer1().addCard(table.getDeck().draw(true));
+			// table.getPlayer1().revealHand();
+			// getPointsPlayerOne();
 
-		 do {
-			 } while (!actorTurn(table.getPlayer2()));
-		 System.out.println("go fish computer");
-			 table.getPlayer2().addCard(table.getDeck().draw(true));
+//			do {
+//			} while (!actorTurn(table.getPlayer2()));
+//			System.out.println("go fish computer");
+//			table.getPlayer2().addCard(table.getDeck().draw(false));
+//			table.getPlayer2().handFaceDown();
+//			getPointsPlayerTwo();
 
 		} while (table.getPlayer2().getCount() > 0
 				|| table.getPlayer2().getCount() > 0);
-	
-		if(playerOneScore>playerTwoScore) {
-			System.out.println(table.getPlayer1().getName()+" Wins.");
+
+		if (playerOneScore > playerTwoScore) {
+			System.out.println(table.getPlayer1().getName() + " Wins.");
 		} else {
-			System.out.println(table.getPlayer2().getName()+" Wins.");
+			System.out.println(table.getPlayer2().getName() + " Wins.");
 		}
-			
+
 		System.out.println("\nend of Line");
 	}
 
-	private void getPoints() {
-		HashMap<Integer, Integer> hashHand = table.getPlayer1()
-				.groupCards();
-		int booksFound=findBooks(hashHand, playerOneScore);
-		playerOneScore=+booksFound;
-		
+	private void getPointsPlayerOne() {
+		HashMap<Integer, Integer> hashHand = table.getPlayer1().groupCards();
+		int booksFound = findBooks(hashHand, playerOneScore);
+		playerOneScore = +booksFound;
+
+	}
+	private void getPointsPlayerTwo() {
+		HashMap<Integer, Integer> hashHand = table.getPlayer2().groupCards();
+		int booksFound = findBooks(hashHand, playerTwoScore);
+		playerTwoScore = +booksFound;
+
 	}
 
 	private void displayTable() {
@@ -113,15 +120,15 @@ public class Game {
 
 	public int findBooks(HashMap<Integer, Integer> hm, int score) {
 		for (Entry<Integer, Integer> entry : hm.entrySet()) {
-			if (entry.getValue()%2==0) {
+			if (entry.getValue() % 2 == 0) {
 				// hm.remove(entry.getKey());
 				score++;
 				removeBooks(table.getPlayer1(), entry.getKey());
-			//	System.out.println("card: " + entry.getKey());
-			//	return entry.getKey();
+				// System.out.println("card: " + entry.getKey());
+				// return entry.getKey();
 			}
 		}
-		System.out.println("Score: "+score);
+		System.out.println("Score: " + score);
 		return score;
 	}
 
@@ -133,7 +140,7 @@ public class Game {
 			}
 		}
 		playerOneScore++;
-		System.out.println("P Score: "+playerOneScore);
+		System.out.println("P Score: " + playerOneScore);
 	}
 	// public void groupCards() {
 	// sortHand = new HashMap<>();
