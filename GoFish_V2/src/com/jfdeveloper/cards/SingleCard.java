@@ -1,6 +1,6 @@
 package com.jfdeveloper.cards;
 
-import com.careerdevs.ui.Input;
+import com.jfdeveloper.ui.Input;
 
 public class SingleCard implements Deck {
 	
