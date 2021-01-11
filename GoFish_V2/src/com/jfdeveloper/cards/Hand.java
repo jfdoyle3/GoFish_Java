@@ -5,8 +5,8 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
-import com.careerdevs.actors.Actor;
-import com.careerdevs.ui.Input;
+import com.jfdeveloper.actors.Actor;
+
 
 public class Hand {
 
