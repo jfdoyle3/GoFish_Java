@@ -1,12 +1,10 @@
 package com.jfdeveloper.cards;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
 import com.jfdeveloper.actors.Actor;
-
 
 public class Hand {
 
@@ -38,7 +36,7 @@ public class Hand {
 	public void addCard(Card card) {
 		cards.add(card);
 	}
-	
+
 	public Card getCard(int index) {
 		return cards.get(index);
 	}
@@ -60,7 +58,7 @@ public class Hand {
 	}
 
 	// TODO: use GroupCard to find books and use key to remove from hand.
-	public HashMap<Integer,Integer> groupCards() {
+	public HashMap<Integer, Integer> groupCards() {
 		sortHand = new HashMap<>();
 		for (Card card : cards) {
 			if (sortHand.containsKey(card.getValue()))
@@ -69,8 +67,8 @@ public class Hand {
 			else
 				sortHand.put(card.getValue(), 1);
 		}
-	//	System.out.println(sortHand);
-		 return sortHand;
+		// System.out.println(sortHand);
+		return sortHand;
 	}
 
 	public void revealHand() {
@@ -88,7 +86,6 @@ public class Hand {
 				card.flip();
 		}
 	}
-
 
 	// TODO: for loop thru cards and find index or remove from hand to add to
 	// new hand or discard for multiple cards to be xfered.

@@ -9,7 +9,6 @@ public class GameDeck implements Deck {
 	private final static String[] SUITS = { "♠", "♥", "♧", "♦" };
 	private final static int[] VALUES = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10,11, 12, 13};
 	private List<Card> cards;
-	private boolean isEmpty=false;
 
 	public GameDeck() {
 		cards = new ArrayList<>();

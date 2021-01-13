@@ -1,7 +1,5 @@
 package com.jfdeveloper.cards;
 
-import java.util.List;
-
 
 public class Card {
 	private int value;
