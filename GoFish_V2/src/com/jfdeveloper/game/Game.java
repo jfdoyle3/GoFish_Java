@@ -6,8 +6,6 @@ import java.util.Map.Entry;
 import com.jfdeveloper.cards.Hand;
 import com.jfdeveloper.ui.Input;
 
-
-
 public class Game {
 
 	private Table table = new Table();
@@ -25,20 +23,20 @@ public class Game {
 		// Deal Cards
 		dealCards();
 		do {
-			 do {
-			 } while (!actorTurn(table.getPlayer1()));
+			do {
+			} while (!actorTurn(table.getPlayer1()));
+			getPointsPlayerOne();
+			System.out.println("go fish player");
+			table.getPlayer1().addCard(table.getDeck().draw(true));
+			table.getPlayer1().revealHand();
 			
-			 System.out.println("go fish player");
-			 table.getPlayer1().addCard(table.getDeck().draw(true));
-			 table.getPlayer1().revealHand();
-			 getPointsPlayerOne();
 
-//			do {
-//			} while (!actorTurn(table.getPlayer2()));
-//			System.out.println("go fish computer");
-//			table.getPlayer2().addCard(table.getDeck().draw(false));
-//			table.getPlayer2().handFaceDown();
-//			getPointsPlayerTwo();
+			// do {
+			// } while (!actorTurn(table.getPlayer2()));
+			// System.out.println("go fish computer");
+			// table.getPlayer2().addCard(table.getDeck().draw(false));
+			// table.getPlayer2().handFaceDown();
+			// getPointsPlayerTwo();
 
 		} while (table.getPlayer2().getCount() > 0
 				|| table.getPlayer2().getCount() > 0);
