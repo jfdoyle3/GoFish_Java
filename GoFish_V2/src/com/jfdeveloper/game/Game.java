@@ -11,8 +11,6 @@ public class Game {
 	private Table table = new Table();
 	private Input input = new Input();
 	private HashMap<Integer, Integer> sortHand;
-	private boolean emptyHand;
-	private boolean inHand = false;
 	private int playerOneScore = 0;
 	private int playerTwoScore = 0;
 	private HashMap<String, Integer> scoreBoard;
@@ -108,7 +106,7 @@ public class Game {
 	}
 
 	public void dealCards() {
-		for (int idx = 0; idx < 7; idx++) {
+		for (int idx = 0; idx < 4; idx++) {
 			table.getPlayer1().addCard(table.getDeck().draw(true));
 			table.getPlayer2().addCard(table.getDeck().draw(false));
 		}
