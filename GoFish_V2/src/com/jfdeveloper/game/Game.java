@@ -19,7 +19,8 @@ public class Game {
 		scoreBoard = new HashMap<String, Integer>();
 		table.getDeck().shuffle();
 		// Deal Cards
-		dealCards();
+		int cardsDealt=Input.inputNumberText("Number of cards in hand");
+		dealCards(cardsDealt);
 		do {
 			do {
 			} while (!actorTurn(table.getPlayer1()));
@@ -30,8 +31,7 @@ public class Game {
 			pause(1000);
 			table.getPlayer1().addCard(table.getDeck().draw(true));
 			table.getPlayer1().revealHand();
-			System.out
-					.println("<--------------- End Player 1 --------------->");
+			System.out.println("<--------------- End Player 1 --------------->");
 
 			do {
 			} while (!actorTurn(table.getPlayer2()));
@@ -41,8 +41,7 @@ public class Game {
 			pause(1000);
 			table.getPlayer2().addCard(table.getDeck().draw(false));
 			table.getPlayer2().handFaceDown();
-			System.out
-					.println("<--------------- End Player 2 --------------->");
+			System.out.println("<--------------- Com --------------->");
 
 		} while (table.getPlayer2().getCount() > 0
 				|| table.getPlayer2().getCount() > 0);
@@ -89,7 +88,7 @@ public class Game {
 	private boolean performAction(Hand hand, int action) {
 
 		int pickCard = action;
-		// System.out.println("Computer chooses: "+pickCard);
+		System.out.println("Computer chooses: "+pickCard);
 		findCards(table.getPlayer2(), table.getPlayer1(), pickCard);
 		displayTable();
 		return true;
@@ -113,8 +112,8 @@ public class Game {
 
 	}
 
-	public void dealCards() {
-		for (int idx = 0; idx < 4; idx++) {
+	public void dealCards(int numberOfCards) {
+		for (int idx = 0; idx < numberOfCards; idx++) {
 			table.getPlayer1().addCard(table.getDeck().draw(true));
 			table.getPlayer2().addCard(table.getDeck().draw(false));
 		}
