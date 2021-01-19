@@ -23,18 +23,28 @@ public class Game {
 		do {
 			do {
 			} while (!actorTurn(table.getPlayer1()));
+			
+			System.out.println("<---------------------------------------->");
 			getPointsPlayerOne();
 			System.out.println("go fish player");
+			 try {
+		            // thread to sleep for 1000 milliseconds
+		            Thread.sleep(1000);
+		         } catch (Exception e) {
+		            System.out.println(e);
+		         }
 			table.getPlayer1().addCard(table.getDeck().draw(true));
 			table.getPlayer1().revealHand();
-			
+			System.out.println("<--------------- End Player 1 --------------->");
 
 			 do {
-			 } while (!actorTurn(table.getPlayer2()));
+			 } while (!actorTurn(table.getPlayer2())); 
+			 System.out.println("<---------------------------------------->");
+			 getPointsPlayerTwo();
 			 System.out.println("go fish computer");
 			 table.getPlayer2().addCard(table.getDeck().draw(false));
 			 table.getPlayer2().handFaceDown();
-			 getPointsPlayerTwo();
+				System.out.println("<--------------- End Player 2 --------------->");
 
 		} while (table.getPlayer2().getCount() > 0
 				|| table.getPlayer2().getCount() > 0);
