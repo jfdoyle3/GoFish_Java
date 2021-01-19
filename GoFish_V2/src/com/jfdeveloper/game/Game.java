@@ -29,12 +29,12 @@ public class Game {
 			table.getPlayer1().revealHand();
 			
 
-			// do {
-			// } while (!actorTurn(table.getPlayer2()));
-			// System.out.println("go fish computer");
-			// table.getPlayer2().addCard(table.getDeck().draw(false));
-			// table.getPlayer2().handFaceDown();
-			// getPointsPlayerTwo();
+			 do {
+			 } while (!actorTurn(table.getPlayer2()));
+			 System.out.println("go fish computer");
+			 table.getPlayer2().addCard(table.getDeck().draw(false));
+			 table.getPlayer2().handFaceDown();
+			 getPointsPlayerTwo();
 
 		} while (table.getPlayer2().getCount() > 0
 				|| table.getPlayer2().getCount() > 0);
