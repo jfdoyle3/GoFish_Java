@@ -23,28 +23,26 @@ public class Game {
 		do {
 			do {
 			} while (!actorTurn(table.getPlayer1()));
-			
+
 			System.out.println("<---------------------------------------->");
 			getPointsPlayerOne();
 			System.out.println("go fish player");
-			 try {
-		            // thread to sleep for 1000 milliseconds
-		            Thread.sleep(1000);
-		         } catch (Exception e) {
-		            System.out.println(e);
-		         }
+			pause(1000);
 			table.getPlayer1().addCard(table.getDeck().draw(true));
 			table.getPlayer1().revealHand();
-			System.out.println("<--------------- End Player 1 --------------->");
+			System.out
+					.println("<--------------- End Player 1 --------------->");
 
-			 do {
-			 } while (!actorTurn(table.getPlayer2())); 
-			 System.out.println("<---------------------------------------->");
-			 getPointsPlayerTwo();
-			 System.out.println("go fish computer");
-			 table.getPlayer2().addCard(table.getDeck().draw(false));
-			 table.getPlayer2().handFaceDown();
-				System.out.println("<--------------- End Player 2 --------------->");
+			do {
+			} while (!actorTurn(table.getPlayer2()));
+			System.out.println("<---------------------------------------->");
+			getPointsPlayerTwo();
+			System.out.println("go fish computer");
+			pause(1000);
+			table.getPlayer2().addCard(table.getDeck().draw(false));
+			table.getPlayer2().handFaceDown();
+			System.out
+					.println("<--------------- End Player 2 --------------->");
 
 		} while (table.getPlayer2().getCount() > 0
 				|| table.getPlayer2().getCount() > 0);
@@ -158,4 +156,12 @@ public class Game {
 	// System.out.println(sortHand);
 	// // return sortHand;
 	// }
+	public void pause(int time) {
+		try {
+			// thread to sleep for 1000 milliseconds
+			Thread.sleep(time);
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+	}
 }
