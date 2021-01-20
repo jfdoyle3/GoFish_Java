@@ -19,29 +19,30 @@ public class Game {
 		scoreBoard = new HashMap<String, Integer>();
 		table.getDeck().shuffle();
 		// Deal Cards
-		int cardsDealt=Input.inputNumberText("Number of cards in hand");
-		dealCards(cardsDealt);
+	//	int cardsDealt=Input.inputNumberText("Number of cards in hand");
+		dealCards(4);
+		System.out.println("<------------------ Start Turn: Player  ----------------->");
 		do {
 			do {
 			} while (!actorTurn(table.getPlayer1()));
 
-			System.out.println("<---------------------------------------->");
+			
 			getPointsPlayerOne();
 			System.out.println("go fish player");
 			pause(1000);
 			table.getPlayer1().addCard(table.getDeck().draw(true));
 			table.getPlayer1().revealHand();
-			System.out.println("<--------------- End Player 1 --------------->");
-
+			System.out.println("<----------------- End Turn: Player  ---------------->");
+			System.out.println("<--------------- Start Turn: Computer  --------------->");
 			do {
 			} while (!actorTurn(table.getPlayer2()));
-			System.out.println("<---------------------------------------->");
+			
 			getPointsPlayerTwo();
 			System.out.println("go fish computer");
 			pause(1000);
 			table.getPlayer2().addCard(table.getDeck().draw(false));
 			table.getPlayer2().handFaceDown();
-			System.out.println("<--------------- Com --------------->");
+			System.out.println("<--------------- End Turn: Computer  --------------->");
 
 		} while (table.getPlayer2().getCount() > 0
 				|| table.getPlayer2().getCount() > 0);
