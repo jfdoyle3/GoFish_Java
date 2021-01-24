@@ -21,18 +21,18 @@ public class Game {
 		// Deal Cards
 	//	int cardsDealt=Input.inputNumberText("Number of cards in hand");
 		dealCards(4);
-		System.out.println("<------------------ Start Turn: Player  ----------------->");
+		
 		do {
+			System.out.println("<------------------ Start Turn: Player  ----------------->");
+				getPointsPlayerOne();
 			do {
 			} while (!actorTurn(table.getPlayer1()));
-
-			
-			getPointsPlayerOne();
+		
 			System.out.println("go fish player");
 			pause(1000);
 			table.getPlayer1().addCard(table.getDeck().draw(true));
 			table.getPlayer1().revealHand();
-			System.out.println("<----------------- End Turn: Player  ---------------->");
+			System.out.println("<----------------- End Turn: Player  ----------------->");
 			System.out.println("<--------------- Start Turn: Computer  --------------->");
 			do {
 			} while (!actorTurn(table.getPlayer2()));
@@ -126,7 +126,7 @@ public class Game {
 				// hm.remove(entry.getKey());
 				score++;
 				removeBooks(table.getPlayer1(), entry.getKey());
-				// System.out.println("card: " + entry.getKey());
+				System.out.println("found card: " + entry.getKey());
 				// return entry.getKey();
 			}
 		}
