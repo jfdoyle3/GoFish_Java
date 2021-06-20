@@ -10,6 +10,7 @@ import com.careerdevs.ui.Input;
 
 public class Hand {
 
+	// Change to a Queue 
 	private List<Card> cards = new ArrayList<>();
 	private HashMap<Integer, Integer> sortHand;
 	private Actor actor;
@@ -26,7 +27,7 @@ public class Hand {
 		return actor;
 	}
 
-	@Override
+	
 	public String toString() {
 		String output = "";
 		for (var card : cards) {

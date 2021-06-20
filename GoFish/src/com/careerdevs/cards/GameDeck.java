@@ -11,6 +11,7 @@ public class GameDeck implements Deck {
 	private List<Card> cards;
 	private boolean isEmpty=false;
 
+	// Change to a Queue to form deck
 	public GameDeck() {
 		cards = new ArrayList<>();
 		for (var suit : SUITS) {
